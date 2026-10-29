@@ -1,0 +1,66 @@
+function minutesAgo(minutes) {
+  return new Date(Date.now() - minutes * 60 * 1000).toISOString()
+}
+
+export const seedNotifications = [
+  {
+    id: 'n-1',
+    type: 'interest',
+    title: 'New interest from Kabir',
+    body: 'Kabir Malhotra has expressed interest in your profile.',
+    createdAt: minutesAgo(24),
+    read: false,
+    to: '/interests',
+    profileId: 'p2',
+  },
+  {
+    id: 'n-2',
+    type: 'message',
+    title: 'New message from Aditya',
+    body: '“I would love to hear about your favourite photo walks sometime.”',
+    createdAt: minutesAgo(28),
+    read: false,
+    to: '/messages?c=conv-p1',
+    profileId: 'p1',
+  },
+  {
+    id: 'n-3',
+    type: 'interest',
+    title: 'Your interest was accepted',
+    body: 'Arjun Nair accepted your interest. You can start a conversation now.',
+    createdAt: minutesAgo(190),
+    read: false,
+    to: '/interests',
+    profileId: 'p3',
+  },
+  {
+    id: 'n-4',
+    type: 'profile',
+    title: 'A small profile improvement',
+    body: 'Add one more interest to help surface richer compatibility insights.',
+    createdAt: minutesAgo(1500),
+    read: true,
+    to: '/profile/edit',
+    profileId: null,
+  },
+  {
+    id: 'n-5',
+    type: 'subscription',
+    title: 'Your Plus membership is active',
+    body: 'This is a simulated membership status. No payment has been taken.',
+    createdAt: minutesAgo(4320),
+    read: true,
+    to: '/settings',
+    profileId: null,
+  },
+  {
+    id: 'n-6',
+    type: 'announcement',
+    title: 'Welcome to the Saanjh demo',
+    body: 'Every profile, message and statistic you see here is simulated sample content.',
+    createdAt: minutesAgo(10080),
+    read: true,
+    to: '/help',
+    profileId: null,
+  },
+]
